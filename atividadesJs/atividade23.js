@@ -7,12 +7,9 @@ function numAleatorio(min, max) {
 
 function mediaDeAlunos() {
     let codigo = 0;
-    let alunosChamados = [];
+    let alunochamado;
 
-    //iniciar
-    alunosChamados.push(codigo);
-
-    while(codigo !== -1) {
+    while(codigo !== -1 && alunochamado != codigo) {
         const nota1 = numAleatorio(0, 10);
         const nota2 = numAleatorio(0, 10);
         const nota3 = numAleatorio(0, 10);
@@ -36,10 +33,10 @@ function mediaDeAlunos() {
         }
 
         console.log(`Codigo: ${codigo} - notas: ${nota1}, ${nota2}, ${nota3} - media: ${media}`);
+        console.log(`Situação: ${media >= 5 ? "Aprovado" : "Reprovado"}`);
             
-        
-        alunosChamados.push(codigo);
-        codigo = numAleatorio(-1, 2);
+        alunochamado = codigo;
+        codigo = numAleatorio(-1, 4);
     }
 
 }
